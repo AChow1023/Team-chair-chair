@@ -1,4 +1,3 @@
-package TimerCommandFile;
 
 import java.util.HashMap;
 public class InputHandler{
@@ -16,7 +15,10 @@ public class InputHandler{
     }
 
     public boolean inputEntered(String data){
-        commands.get(data).execute();
-        return true;
+        if(commands.containsKey(data)){
+            commands.get(data).execute();
+            return true;
+        }
+        return false;
     }
 }
